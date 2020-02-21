@@ -1,0 +1,46 @@
+html, body{
+  height: 100%;
+}
+
+#card_style {
+  background: rgb(37, 67, 156);
+  border-radius: 25px;
+}
+
+h3 {
+  color: white;
+  text-align: center;
+}
+
+h4 {
+  color: red;
+  text-align: center;
+}
+
+.Aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Aligner-item {
+  max-width: 50%;
+}
+
+.Aligner-item--top {
+  align-self: flex-start;
+}
+
+.Aligner-item--bottom {
+  align-self: flex-end;
+}
+
+button {
+  margin: 0 auto;
+  display: block;
+}
+
+#points {
+  text-align: center;
+  color:yellow;
+}
