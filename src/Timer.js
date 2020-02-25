@@ -22,12 +22,12 @@ export default class Timer extends React.Component {
     }
 
     componentDidUpdate(prevProps){
-        if(prevProps.seconds != this.props.seconds){
+        if(prevProps.seconds !== this.props.seconds){
             this.setState({
                 seconds: this.props.seconds
             })
         }
-        if(prevProps.minutes != this.props.minutes){
+        if(prevProps.minutes !== this.props.minutes){
             this.setState({
                 minutes: this.props.minutes
             })
@@ -45,12 +45,8 @@ export default class Timer extends React.Component {
             }))
         }
 
-        else if (this.state.seconds == 0 && this.state.minutes == 0) {
+        else if (this.state.seconds === 0 && this.state.minutes === 0) {
             this.onTimerFinished();
-           {/* this.setState({
-                seconds: 0,
-                minutes: 0,
-            })*/}
         }
 
 

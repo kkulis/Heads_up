@@ -1,6 +1,8 @@
 import React from 'react';
 import './card_css.css';
 import Timer from './Timer';
+import Question from './Question';
+import YesButton from './YesButton';
 
 
 const questions = [
@@ -19,18 +21,18 @@ class Card extends React.Component {
       this.state = {
           example: '',
           tip: '',
-          minutes: 1,
+          minutes: 2,
           seconds: 10,
           points: 0,
           message: '',
           endTime: false,
           round: 0
       }
-      this.handleYesClick = this.handleYesClick.bind(this);
+      /*this.handleYesClick = this.handleYesClick.bind(this);*/
       this.handleNoClick = this.handleNoClick.bind(this);
   }
 
-  handleYesClick() {
+  /*handleYesClick() {
       console.log("click");
       var question = questions[this.state.round];
       this.setState(({ points, round }) => ({
@@ -42,7 +44,7 @@ class Card extends React.Component {
           message: '',
           round: round + 1
       }));
-  }
+  }*/
   handleNoClick() {
       console.log("click2");
       var question = questions[this.state.round];
@@ -118,9 +120,17 @@ class Card extends React.Component {
 
   timerFinished = () =>{
       console.log("timer finished");
-      this.setState({
-          seconds: this.state.seconds+1,
-      })
+      var question = questions[this.state.round];
+      this.setState(({ round }) => ({
+          seconds: question.seconds,
+          minutes: question.minutes,
+          example: question.example,
+          tip: question.tip,
+          round: round + 1
+      }));
+  }
+  onYesClick = () => {
+    console.log("yes clicked");
   }
 
   render() {
@@ -130,11 +140,10 @@ class Card extends React.Component {
                   <Timer minutes={this.state.minutes} seconds={this.state.seconds} onTimerFinished={this.timerFinished} />
               </div>
               <div className="row-align-items-center h-50">
-                  <h3>{this.state.example}</h3>
-                  <h4>{this.state.tip}</h4>
+                  <Question example = {this.state.example} tip = {this.state.tip}/>
               </div>
               <div className="row-align-items-end h-25">
-                  <button onClick={this.handleYesClick}>YES</button>
+                  <YesButton onYesClick = {this.onYesClick}/>
                   <button onClick={this.handleNoClick}>NO</button>
                   <p id="points">your points: {this.state.points}</p>
               </div>
