@@ -3,6 +3,8 @@ import './card_css.css';
 import Timer from './Timer';
 import Question from './Question';
 import YesButton from './YesButton';
+import NoButton from './NoButton';
+import Score from './Score';
 
 
 const questions = [
@@ -25,7 +27,6 @@ class Card extends React.Component {
           seconds: 10,
           points: 0,
           message: '',
-          endTime: false,
           round: 0
       }
       /*this.handleYesClick = this.handleYesClick.bind(this);*/
@@ -131,6 +132,26 @@ class Card extends React.Component {
   }
   onYesClick = () => {
     console.log("yes clicked");
+    var question = questions[this.state.round];
+    this.setState(({ round, points }) => ({
+        seconds: question.seconds,
+        minutes: question.minutes,
+        example: question.example,
+        tip: question.tip,
+        round: round + 1,
+        points: points + 1
+    }));
+  }
+  onNoClick = () => {
+    console.log("no clicked");
+    var question = questions[this.state.round];
+    this.setState(({ round}) => ({
+        seconds: question.seconds,
+        minutes: question.minutes,
+        example: question.example,
+        tip: question.tip,
+        round: round + 1,
+    }));
   }
 
   render() {
@@ -144,8 +165,8 @@ class Card extends React.Component {
               </div>
               <div className="row-align-items-end h-25">
                   <YesButton onYesClick = {this.onYesClick}/>
-                  <button onClick={this.handleNoClick}>NO</button>
-                  <p id="points">your points: {this.state.points}</p>
+                  <NoButton onNoClick = {this.onNoClick}/>
+                  <Score points = {this.state.points} />
               </div>
           </div>
       );
