@@ -11,14 +11,16 @@ export default class Timer extends React.Component {
         }
 
         this.onTimerFinished = props.onTimerFinished;
-
+        this.onGameBegin = props.onGameBegin;
         this.componentDidUpdate = this.componentDidUpdate.bind(this)
     }
     componentDidMount() {
+
         this.timerID = setInterval(
             () => this.tick(),
             100
         );
+        this.onGameBegin();
     }
 
     componentDidUpdate(prevProps){

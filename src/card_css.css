@@ -3,7 +3,8 @@ html, body{
 }
 
 #card_style {
-  background: rgb(37, 67, 156);
+  /*background: rgb(37, 67, 156);*/
+  background-image: url("./c10.jpg");
   border-radius: 25px;
 }
 
