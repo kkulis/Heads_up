@@ -1,3 +1,4 @@
+import { Redirect } from 'react-router'
 import React from 'react';
 import './card_css.css';
 import Timer from './Timer';
@@ -5,15 +6,6 @@ import Question from './Question';
 import YesButton from './YesButton';
 import NoButton from './NoButton';
 import Score from './Score';
-
-
-{/*const questions = [
-  { example: "Phone", tip: "show", minutes: 0, seconds: 40 },
-  { example: "simply the best", tip: "sing", minutes: 1, seconds: 10 },
-  { example: "headphones", tip: "show", minutes: 2, seconds: 30 },
-  { example: "cat", tip: "show", minutes: 1, seconds: 23 },
-];*/}
-
 
 
 class Card extends React.Component {
@@ -28,8 +20,15 @@ class Card extends React.Component {
           seconds: 0,
           points: 0,
           message: '',
+          redirect: false
       }
+  }
 
+  endingCheck = () => {
+      if (this.state.round === this.state.questions.length) {
+          console.log("endgame");
+          this.setState({redirect: true})
+      }
   }
 
   onGameBegin = () => {
@@ -45,6 +44,7 @@ class Card extends React.Component {
   }
 
   timerFinished = () =>{
+    this.endingCheck();
       console.log("timer finished");
       var question = this.state.questions[this.state.round];
       this.setState(({ round }) => ({
@@ -56,6 +56,7 @@ class Card extends React.Component {
       }));
   }
   onYesClick = () => {
+    this.endingCheck();
     console.log("yes clicked");
     var question = this.state.questions[this.state.round];
     this.setState(({ round, points }) => ({
@@ -68,6 +69,7 @@ class Card extends React.Component {
     }));
   }
   onNoClick = () => {
+    this.endingCheck();
     console.log("no clicked");
     var question = this.state.questions[this.state.round];
     this.setState(({ round}) => ({
@@ -80,6 +82,17 @@ class Card extends React.Component {
   }
 
   render() {
+      const {redirect} = this.state;
+      const {points} = this.state;
+      if (redirect) {
+          return <Redirect to  = {{
+              pathname: "/GameOver",
+              state: {
+                  endPoints: points
+              }
+          }}
+          />
+      }
       return (
 
           <div className="container-fluid h-100" id="card_style">
@@ -89,7 +102,7 @@ class Card extends React.Component {
               <div className="row-align-items-center h-50">
                   <Question example = {this.state.example} tip = {this.state.tip}/>
               </div>
-              <div className="row-align-items-end h-25">
+              <div className="row-align-items-end h-25 col-sm">
                   <YesButton onYesClick = {this.onYesClick}/>
                   <NoButton onNoClick = {this.onNoClick}/>
                   <Score points = {this.state.points} />
@@ -101,8 +114,4 @@ class Card extends React.Component {
 
 
 
-
-
-
-// {/*<React.Fragment></React.Fragment>*/ }
 export default Card;
