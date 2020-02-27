@@ -2,3 +2,19 @@
     background-image: url("c10.jpg");
     border-radius: 25px;
 }
+
+h3 {
+    color: white;
+    text-align: center;
+    font-family: 'Fredoka One';
+  }
+
+body {
+    font-family: 'Fredoka One';
+}
+
+#question{
+    margin: 0 auto;
+    display: block;
+
+}

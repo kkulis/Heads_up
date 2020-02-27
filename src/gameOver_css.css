@@ -2,3 +2,8 @@
     background-image: url("c10.jpg");
     border-radius: 25px;
 }
+
+#restartButton {
+    margin: 0 auto;
+    display: block;
+  }

@@ -15,28 +15,28 @@ export default class Home extends React.Component {
     }
     render() {
         return (
-            <div className="container- h-100" id = "Home_style">
+            <div className="container-fluid h-100" id = "Home_style">
+                <div className = "row-align-items-start h-25">
+                    <h3>Head's Up!</h3>
+                    <h4>mobile</h4>
+                </div>
                 <div className="row">
-                    <div className="col-sm">
-                        <button className="btn btn-link">
+                    <div className="col-md-4">
+                        <button className="btn btn-link" id = "question">
                             <Link to="/Questions-1">Questions 1</Link>
                         </button>
                     </div>
-                    <div className="col-sm">
-                        <button class="btn btn-link">
+                    <div className="col-md-4">
+                        <button class="btn btn-link" id = "question">
                             <Link to="/Questions-2">Questions 2</Link>
                         </button>
                     </div>
-                    <div className="col-sm">
-                        <button className="btn btn-link">
+                    <div className="col-md-4">
+                        <button className="btn btn-link" id = "question">
                             <Link to="/Questions-3">Questions 3</Link>
                         </button>
                     </div>
                 </div>
-
-
-
-
             </div>
 
         );
