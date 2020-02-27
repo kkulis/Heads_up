@@ -18,8 +18,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#9400D3",
-  "background_color": "#9400D3"
+  "start_url": "https://determined-pasteur-26d36e.netlify.com/",
+  "display": "fullscreen",
+  "theme_color": "#8A2BE2",
+  "background_color": "#8A2BE2"
 }

@@ -15,7 +15,7 @@ import {
     { example: "simply the best", tip: "sing", minutes: 1, seconds: 10 },
     { example: "headphones", tip: "show", minutes: 2, seconds: 30 },
     { example: "cat", tip: "show", minutes: 1, seconds: 23 },
-    { example: "", tip: "", minutes: 0, seconds: 1 },
+    { example: "", tip: "", minutes: 0, seconds: 0 },
   ];
 
   const questions2 = [
