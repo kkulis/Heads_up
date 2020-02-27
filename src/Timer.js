@@ -18,7 +18,7 @@ export default class Timer extends React.Component {
 
         this.timerID = setInterval(
             () => this.tick(),
-            100
+            1000
         );
         this.onGameBegin();
     }
