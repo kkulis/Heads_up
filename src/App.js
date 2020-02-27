@@ -23,7 +23,7 @@ import {
     { example: "chair", tip: "sing", minutes: 1, seconds: 10 },
     { example: "TV", tip: "show", minutes: 2, seconds: 30 },
     { example: "notebook", tip: "show", minutes: 1, seconds: 23 },
-    { example: "", tip: "", minutes: 0, seconds: 1 },
+    { example: "", tip: "", minutes: 0, seconds: 0 },
   ];
 
   const questions3 = [
@@ -31,7 +31,7 @@ import {
     { example: "water", tip: "sing", minutes: 1, seconds: 10 },
     { example: "keys", tip: "show", minutes: 2, seconds: 30 },
     { example: "lamp", tip: "show", minutes: 1, seconds: 23 },
-    { example: "", tip: "", minutes: 0, seconds: 1 },
+    { example: "", tip: "", minutes: 0, seconds: 0 },
   ];
   
 export default class App extends React.Component{

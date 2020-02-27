@@ -103,8 +103,10 @@ class Card extends React.Component {
                   <Question example = {this.state.example} tip = {this.state.tip}/>
               </div>
               <div className="row-align-items-end h-25 col-sm">
+                <div className="center-block text-center">   
                   <YesButton onYesClick = {this.onYesClick}/>
                   <NoButton onNoClick = {this.onNoClick}/>
+                </div>
                   <Score points = {this.state.points} />
               </div>
           </div>

@@ -10,7 +10,7 @@ export default class YesButton extends React.Component {
 
     render(){
         return(
-            <button onClick={this.onYesClick}>YES</button>
+            <button className = "btn btn-primary" onClick={this.onYesClick}>YES</button>
         );
     }
 

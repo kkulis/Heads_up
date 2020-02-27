@@ -10,7 +10,7 @@ export default class NoButton extends React.Component {
 
     render(){
         return(
-            <button onClick={this.onNoClick}>NO</button>
+            <button className = "btn btn-primary" onClick={this.onNoClick}>NO</button>
         );
     }
 
