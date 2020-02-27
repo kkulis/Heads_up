@@ -11,7 +11,7 @@ import {
   import GameOver from './GameOver';
 
   const questions = [
-    { example: "Phone", tip: "show", minutes: 1, seconds: 40 },
+    { example: "Phone", tip: "show", minutes: 0, seconds: 20 },
     { example: "simply the best", tip: "sing", minutes: 1, seconds: 10 },
     { example: "headphones", tip: "show", minutes: 2, seconds: 30 },
     { example: "cat", tip: "show", minutes: 1, seconds: 23 },
@@ -19,7 +19,7 @@ import {
   ];
 
   const questions2 = [
-    { example: "Dog", tip: "show", minutes: 1, seconds: 40 },
+    { example: "Dog", tip: "show", minutes: 0, seconds: 40 },
     { example: "chair", tip: "sing", minutes: 1, seconds: 10 },
     { example: "TV", tip: "show", minutes: 2, seconds: 30 },
     { example: "notebook", tip: "show", minutes: 1, seconds: 23 },
@@ -27,7 +27,7 @@ import {
   ];
 
   const questions3 = [
-    { example: "fish", tip: "show", minutes: 1, seconds: 40 },
+    { example: "fish", tip: "show", minutes: 0, seconds: 30 },
     { example: "water", tip: "sing", minutes: 1, seconds: 10 },
     { example: "keys", tip: "show", minutes: 2, seconds: 30 },
     { example: "lamp", tip: "show", minutes: 1, seconds: 23 },
