@@ -3,9 +3,6 @@
 Simple React.js Web app based on popular game, where player is trying to
 guess what is being displayed on his forehead. 
 
-
-try at: https://determined-pasteur-26d36e.netlify.com/
-
 In the project directory, you can run:
 
 ### `npm start`
